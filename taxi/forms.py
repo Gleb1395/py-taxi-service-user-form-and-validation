@@ -20,12 +20,12 @@ class DriverLicenseUpdateForm(forms.ModelForm):
         license_number = self.cleaned_data.get("license_number")
 
         if len(license_number) != 8:
-            raise ValidationError("Must be min 8 digits")
+            raise ValidationError("Must be exactly 8 characters long")
 
         if (
                 not license_number[:3].isupper() or not license_number[:3].isalpha()  # NOQA E501
         ):
-            raise ValidationError("Must be a number")
+            raise ValidationError("First three characters must be uppercase letters")
 
         if not license_number[3:].isdigit():
             raise ValidationError("Must be a number")

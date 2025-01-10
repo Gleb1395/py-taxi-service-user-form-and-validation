@@ -49,10 +49,10 @@ urlpatterns = [
     path("drivers/<int:pk>/", DriverDetailView.as_view(), name="driver-detail"),  # NOQA E501
     path("drivers-create/", DriverCreateView.as_view(), name="driver-create"),
     path(
-        "drivers/<int:pk>/update", DriverUpdateView.as_view(), name="driver-update"  # NOQA E501
+        "drivers/<int:pk>/update/", DriverUpdateView.as_view(), name="driver-update"  # NOQA E501
     ),  # NOQA E501
     path(
-        "drivers/<int:pk>/delete", DriverDeleteView.as_view(), name="driver-delete"  # NOQA E501
+        "drivers/<int:pk>/delete/", DriverDeleteView.as_view(), name="driver-delete"  # NOQA E501
     ),  # NOQA E501
 ]
 
