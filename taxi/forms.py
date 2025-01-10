@@ -23,8 +23,8 @@ class DriverLicenseUpdateForm(forms.ModelForm):
             raise ValidationError("Must be min 8 digits")
 
         if (
-            not license_number[:3].isupper() or not license_number[:3].isalpha()
-        ):  # NOQA E501
+                not license_number[:3].isupper() or not license_number[:3].isalpha()  # NOQA E501
+        ):
             raise ValidationError("Must be a number")
 
         if not license_number[3:].isdigit():
