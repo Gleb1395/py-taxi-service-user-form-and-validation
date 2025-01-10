@@ -25,7 +25,7 @@ class DriverLicenseUpdateForm(forms.ModelForm):
         if (
                 not license_number[:3].isupper() or not license_number[:3].isalpha()  # NOQA E501
         ):
-            raise ValidationError("First three characters must be uppercase letters")
+            raise ValidationError("First three characters must be uppercase letters")  # NOQA E501
 
         if not license_number[3:].isdigit():
             raise ValidationError("Must be a number")
